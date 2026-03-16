@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GesturesAndAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="43660" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-lZ-7fX">
+                                <rect key="frame" x="76" y="165" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yga-DX-y4s" appends="YES" id="nTb-QK-HW2"/>
+                                    <outletCollection property="gestureRecognizers" destination="BW6-dN-SQQ" appends="YES" id="4Zv-zr-7Il"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="25329" translatesAutoresizingMaskIntoConstraints="NO" id="SpH-bD-dng">
+                                <rect key="frame" x="76" y="457" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ERh-JO-4YL" appends="YES" id="O9w-It-AP3"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUO-8x-ewp">
+                                <rect key="frame" x="76" y="352" width="231" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4Js-n7-30u" appends="YES" id="0dQ-ts-fDs"/>
+                            <outletCollection property="gestureRecognizers" destination="NkQ-QE-0jk" appends="YES" id="RDI-BT-MKz"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="doubleTapRecognizer" destination="NkQ-QE-0jk" id="dQG-Lg-Tq0"/>
+                        <outlet property="gestureNameLabel" destination="RUO-8x-ewp" id="xFn-jb-Hfe"/>
+                        <outlet property="singleTapRecognizer" destination="4Js-n7-30u" id="OFr-kj-XdQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yga-DX-y4s">
+                    <connections>
+                        <action selector="cityTaped:" destination="BYZ-38-t0r" id="wu8-wK-OM7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="BW6-dN-SQQ" userLabel="Half Moon Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="c1u-uB-6dm"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ERh-JO-4YL" userLabel="Full Moon Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="LB1-ly-HMr"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="4Js-n7-30u" userLabel="Single Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="handleSingleTap:" destination="BYZ-38-t0r" id="yj0-GE-dX7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="NkQ-QE-0jk" userLabel="Double Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="handleDoubleTap:" destination="BYZ-38-t0r" id="MGe-5T-rtP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-48.091603053435115" y="103.52112676056339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="25329" width="6044" height="3640"/>
+        <image name="43660" width="6500" height="4500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
